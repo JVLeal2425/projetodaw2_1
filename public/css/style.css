@@ -3,7 +3,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   background-color: #100035;
   line-height: 1.6;
-  color: #4dbbee;
+  color: #4dc0ee;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -19,27 +19,27 @@ body {
 }
 
 .container {
-  background-color: #520277;
+  background-color: #022777;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(12, 0, 32, 0.1);
+  box-shadow: 0 0 10px rgba(0, 19, 32, 0.1);
   width: 80%;
   max-width: 100%;
 }
 
 h1 {
   text-align: center;
-  color: #9589ff;
+  color: #89d0ff;
   margin-bottom: 20px;
 }
 
 /* Estilos do Menu de Navegação */
 .menu ul {
-  background-color: #6e0235;
-  color: rgb(208, 172, 238);
+  background-color: #343f70;
+  color: rgb(172, 214, 238);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 800px;
   border-radius: 8px;
@@ -48,7 +48,7 @@ h1 {
   margin: 0;
 
 
-  gap: 50px;
+  gap: 20px;
 }
 
 .menu ul li {
@@ -63,7 +63,7 @@ h1 {
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  color: #555;
+  color: #4b8eb4;
 }
 
 .form-group input {
