@@ -40,20 +40,17 @@ h1 {
 .menu ul {
   background-color: #6e0235;
   color: rgb(208, 172, 238);
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   width: 800px;
-   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  border-radius: 8px;
   list-style: none;
   padding: 20px 0;
   margin: 0;
-  
-  
+
+
   gap: 10px;
 }
 
-.menu ul li {
-  text-align: center;
-}
 
 /* Estilos do Formulário */
 .form-group {
