@@ -1,10 +1,10 @@
-<%-include('../cabecalho.ejs')%>
+<%-include('.. /cabecalho.ejs')%>
     <h1>Generos</h1>
-    <div>
+    <div class="search">
         <form action="
         " method="post">
             <input type="text" name="filtro" id="" placeholder="digite o nome">
-            <button type="submit">Pesquisar</button>
+            <button type="submit" class="btn">Pesquisar</button>
         </form>
     </div>
     <a href="/genero/add">+ Genero</a>
@@ -25,4 +25,4 @@
             </tr>
             <%}%>
     </table>
-    <%-include('../rodape.ejs')%>
+    <%-include('.. /rodape.ejs')%>
