@@ -75,6 +75,7 @@ h1 {
 
 /* Estilos dos Botões */
 .btn {
+  background-color: #3286e6;
   display: inline-block;
   padding: 10px 15px;
   border: none;
@@ -86,8 +87,8 @@ h1 {
 }
 
 .btn {
-  background-color: #28a745;
-  color: #fff;
+  background-color: #1f6470;
+  color: #00c3ff;
 }
 
 .btn.edit {
