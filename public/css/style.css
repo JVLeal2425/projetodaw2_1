@@ -92,7 +92,7 @@ h1 {
 }
 
 .btn.edit {
-  background-color: #ffc107;
+  background-color: #07e2ff;
   color: #000;
 }
 
@@ -134,9 +134,10 @@ table th {
 }
 
 table tr:hover {
-  background-color: #f1f1f1;
+  background-color: #46d6fa;
 }
 
 .search {
+  border-radius: 4px;
   text-align: right;
 }
