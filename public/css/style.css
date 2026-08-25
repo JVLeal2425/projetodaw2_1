@@ -48,7 +48,7 @@ h1 {
   margin: 0;
 
 
-  gap: 20px;
+  gap: 10px;
 }
 
 .menu ul li {
@@ -97,7 +97,7 @@ h1 {
 }
 
 .btn.add {
-  color: #fff;
+  color: #05c5ff;
   background-color: #1c0df3
 }
 
