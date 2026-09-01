@@ -5,6 +5,7 @@ import routes from './routes/route.js'; // rotas externas
 //import jogoRoutes from './routes/JogoRoutes.js'; // rotas externas
 //import desenvolvedorRoutes from './routes/DesenvolvedorRoutes.js'; // rotas externas
 import generoRoutes from './routes/GeneroRoutes.js';
+import jogoRoutes from './routes/JogoRoutes.js';
 //import usuarioRoutes from './routes/UsuarioRoutes.js';
 //import avaliacaoRoutes from './routes/AvaliacaoRoutes.js';
 
@@ -25,6 +26,7 @@ app.set('views', join(__dirname, '/views'));
 
 // Rotas
 //app.use(jogoRoutes)
+app.use(jogoRoutes)
 //app.use(desenvolvedorRoutes)
 app.use(generoRoutes)
 //app.use(usuarioRoutes)
