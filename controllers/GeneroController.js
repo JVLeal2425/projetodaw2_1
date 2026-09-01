@@ -10,7 +10,7 @@ export default class GeneroController{
             res.render(caminhoBase + "add")
         }
         this.add = async(req, res)=>{
-            //cria o Aluno
+            //cria o Jogo
            
             await Genero.create({
                 nome: req.body.nome
