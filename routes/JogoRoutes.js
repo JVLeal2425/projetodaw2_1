@@ -11,7 +11,7 @@ const controle = new JogoController();
 const caminhobase = 'jogo/'
 
 router.get('/' + caminhobase + 'add', controle.openAdd)
-router.post('/' + caminhobase + 'add', controle.add)
+router.post('/', upload.single('imagem'), caminhobase + 'add', controle.add)
 router.get('/' + caminhobase + 'lst', controle.list)
 router.post('/' + caminhobase + 'lst', controle.find)
 router.get('/' + caminhobase + 'del/:id', controle.del)

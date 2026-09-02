@@ -11,6 +11,15 @@ export default class JogoController{
         }
         this.add = async(req, res)=>{
             //cria o Jogo
+            let imagemEnviada
+           if(req.file!=null){
+            console.log(" foi")
+            imagemEnviada = req.file.buffer
+           }
+           else{
+            console.log("nao foi")
+            imagemEnviada = null
+           }
            
             await Jogo.create({
                 nome: req.body.nome,
@@ -18,7 +27,7 @@ export default class JogoController{
                 tempoMedio: req.body.tempoMedio,
                 nota: req.body.nota,
                 status: req.body.status,
-                imagem: req.body.imagem
+                imagem: imagemEnviada
             });
             res.redirect('/'+caminhoBase + 'add');
         }
