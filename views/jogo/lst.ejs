@@ -19,13 +19,13 @@
             <td>Ações</td>
         </tr>
 
-        <%for (const {id, nome} of Jogo) {%>
+        <%for (const {id, nome, anoLancamento, tempoMedio, nota, status, imagem} of Jogo) {%>
             <tr>
                 <td>
                     <%=nome%>
                 </td>
                 <td>
-                    <%=anolancamento%>
+                    <%=anoLancamento%>
                 </td>
                 <td>
                     <%=tempoMedio%>

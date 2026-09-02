@@ -6,7 +6,10 @@ const Jogo = conexao.Schema({
     tempoMedio: {type:String, required:true},
     nota: {type:Number, required:true},
     status: {type:String, required:true},
-    imagem: {type:Buffer, required:true},
+    imagem: {type:Buffer,
+        get: (valor) => {
+           if (!valor) return null;
+             return `data:image/png;base64,${valor.toString('base64')}`; required:true}
 })
 
 export default conexao.model('Jogo',Jogo)
