@@ -10,6 +10,7 @@ const Jogo = conexao.Schema({
         get: (valor) => {
            if (!valor) return null;
              return `data:image/png;base64,${valor.toString('base64')}`; required:true}
+        }
 })
 
 export default conexao.model('Jogo',Jogo)
