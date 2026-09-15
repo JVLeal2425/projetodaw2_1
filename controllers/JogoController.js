@@ -8,9 +8,17 @@ export default class JogoController{
     
         this.openAdd = async(req, res)=>{
             res.render(caminhoBase + "add")
+            const resultado = await Genero.find({});
+            res.render(caminhoBase + "add", {Generos: resultado})
         }
         this.add = async(req, res)=>{
             //cria o Jogo
+            let jgenero = null;
+            if (req.body.genero != null)
+            {
+                jgenero = await Genero.findById(req.body.genero)
+            }
+
             let imagemEnviada
            if(req.file!=null){
             console.log(" foi")
@@ -27,7 +35,8 @@ export default class JogoController{
                 tempoMedio: req.body.tempoMedio,
                 nota: req.body.nota,
                 status: req.body.status,
-                imagem: imagemEnviada
+                imagem: imagemEnviada,
+                genero: jgenero
             });
             res.redirect('/'+caminhoBase + 'add');
         }
@@ -57,9 +66,19 @@ export default class JogoController{
 
 
         this.edt = async(req, res)=>{
+
         await Jogo.findByIdAndUpdate(req.params.id, req.body)
         res.redirect('/'+caminhoBase + 'lst');
         
+        let imagemEnviada
+           if(req.file!=null){
+            console.log(" foi")
+            imagemEnviada = req.file.buffer
+           }
+           else{
+            console.log("nao foi")
+            imagemEnviada = null
+           }
         }
 
          this.del = async(req, res)=>{

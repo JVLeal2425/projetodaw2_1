@@ -6,6 +6,7 @@ const Jogo = conexao.Schema({
     tempoMedio: {type:String, required:true},
     nota: {type:Number, required:true},
     status: {type:String, required:true},
+    genero: {type: conexao.Types.ObjectId, ref: "Genero", required: false},
     imagem: {type:Buffer,
         get: (valor) => {
            if (!valor) return null;

@@ -1,10 +1,10 @@
-<%-include('../cabecalho.ejs')%>
+<%-include('.. /cabecalho.ejs')%>
     <h1>Editar Jogo</h1>
     <div>
         <a href="/jogo/lst">Listar</a>
     </div>
     <div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="id" value="<%=Jogo.id%>"><br>
             <label>Nome:</label>
@@ -24,4 +24,4 @@
         </form>
     </div>
 
-    <%-include('../rodape.ejs')%>
+    <%-include('.. /rodape.ejs')%>

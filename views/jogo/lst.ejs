@@ -1,4 +1,4 @@
-<%-include('../cabecalho.ejs')%>
+<%-include('.. /cabecalho.ejs')%>
     <h1>Jogos</h1>
     <div class="search">
         <form action="
@@ -38,10 +38,10 @@
                 </td>
                 <td>
                     <% if (imagem) { %>
-                    <img src="<%=imagem%>" width="150" height="150" alt="Imagem do jogo">
-                    <% } else { %>
-                        Sem imagem!!!
-                    <% } %>
+                        <img src="<%=imagem%>" width="150" height="150" alt="Imagem do jogo">
+                        <% } else { %>
+                            Sem imagem!!!
+                            <% } %>
                 </td>
                 <td><a href="/jogo/edt/<%=id%>">Editar</a>
                     <a href="/jogo/del/<%=id%>">Excluir</a>
@@ -49,4 +49,4 @@
             </tr>
             <%}%>
     </table>
-    <%-include('../rodape.ejs')%>
+    <%-include('.. /rodape.ejs')%>
