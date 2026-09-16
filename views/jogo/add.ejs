@@ -1,3 +1,4 @@
+import Genero from './controllers/GeneroController.js';
 <%-include('../cabecalho.ejs')%>
     <h1>Adicionar Jogo</h1>
     <div>
@@ -20,7 +21,7 @@
             <label for="genero" class="form-label">Genero</label>
             <select name="genero" id="genero" class="form-control">
             <option value="">Selecione</option>
-            <%Generos.forEach(function(genero){%>
+            <%Genero.forEach(function(genero){%>
             <option value='<%=genero.id%>'>
             <%=genero.nome%>
             </option>
