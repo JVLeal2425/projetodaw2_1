@@ -16,6 +16,7 @@
             <td>Nota</td>
             <td>Status</td>
             <td>Imagem</td>
+            <td>Gênero</td>
             <td>Ações</td>
         </tr>
 
@@ -35,6 +36,9 @@
                 </td>
                 <td>
                     <%=status%>
+                </td>
+                <td>
+                <%=jogo.genero != null ? jogo.genero.nome : ""%>
                 </td>
                 <td>
                     <% if (imagem) { %>

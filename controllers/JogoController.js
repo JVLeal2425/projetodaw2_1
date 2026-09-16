@@ -41,7 +41,7 @@ export default class JogoController{
             res.redirect('/'+caminhoBase + 'add');
         }
         this.list = async(req, res)=>{
-            const resultado = await Jogo.find({})
+            const resultado = await Jogo.find({}).populate('genero')
             res.render(caminhoBase + 'lst', {Jogo:resultado})
         }
         this.find = async(req, res)=>{
@@ -60,8 +60,10 @@ export default class JogoController{
             console.log(id)
             const jogo = await Jogo.findById(id) 
             console.log(jogo)
+            const resultado = await Jogo.findById(req.params.id)
+            const jgenero = await Genero.find({});
             res.render(caminhoBase + "edt", 
-                {Jogo:jogo})
+                {Jogo: resultado, Genero:jgenero})
         }
 
 

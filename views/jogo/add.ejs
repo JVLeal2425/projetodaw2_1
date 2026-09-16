@@ -17,6 +17,15 @@
             <input type="text" name="status"><br>
             <label>Imagem do Jogo:</label>
             <input type="file" name="imagem"><br>
+            <label for="genero" class="form-label">Genero</label>
+            <select name="genero" id="genero" class="form-control">
+            <option value="">Selecione</option>
+            <%Generos.forEach(function(genero){%>
+            <option value='<%=genero.id%>'>
+            <%=genero.nome%>
+            </option>
+            <%})%>
+            </select>
             <button type="submit">Cadastrar</button>
 
         </form>

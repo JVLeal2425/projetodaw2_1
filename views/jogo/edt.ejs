@@ -19,6 +19,8 @@
             <input type="text" name="status" value="<%=Jogo.status%>"><br>
             <label>Imagem do Jogo:</label>
             <input type="file" name="imagem" value="<%=Jogo.imagem%>" placeholder="<%=Jogo.imagem%>"><br>
+            <option value="<%=genero.id%>" <%= (genero.id.toString() === Jogo.genero.toString()) ? 'selected' : '' %>
+            ><%=genero.nome%></option>
             <button type="submit">Cadastrar</button>
 
         </form>
