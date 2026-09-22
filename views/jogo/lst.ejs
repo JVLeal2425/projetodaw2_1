@@ -20,7 +20,7 @@
             <td>Ações</td>
         </tr>
 
-        <%for (const {id, nome, anoLancamento, tempoMedio, nota, status, imagem} of Jogo) {%>
+        <%for (const {id, nome, anoLancamento, tempoMedio, nota, status, imagem, genero} of Jogo) {%>
             <tr>
                 <td>
                     <%=nome%>
@@ -38,14 +38,14 @@
                     <%=status%>
                 </td>
                 <td>
-                <%=Jogo.genero != null ? Jogo.genero.nome : ""%>
-                </td>
-                <td>
                     <% if (imagem) { %>
                         <img src="<%=imagem%>" width="150" height="150" alt="Imagem do jogo">
                         <% } else { %>
                             Sem imagem!!!
                             <% } %>
+                </td>
+                <td>
+                <%=genero != null ? genero.nome : ""%>
                 </td>
                 <td><a href="/jogo/edt/<%=id%>">Editar</a>
                     <a href="/jogo/del/<%=id%>">Excluir</a>

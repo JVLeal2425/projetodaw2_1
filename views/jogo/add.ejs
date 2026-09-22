@@ -1,4 +1,3 @@
-import Genero from './controllers/GeneroController.js';
 <%-include('../cabecalho.ejs')%>
     <h1>Adicionar Jogo</h1>
     <div>
@@ -19,13 +18,13 @@ import Genero from './controllers/GeneroController.js';
             <label>Imagem do Jogo:</label>
             <input type="file" name="imagem"><br>
             <label for="genero" class="form-label">Genero</label>
-            <select name="genero" id="genero" class="form-control">
-            <option value="">Selecione</option>
-            <%Genero.forEach(function(genero){%>
-            <option value='<%=genero.id%>'>
-            <%=genero.nome%>
-            </option>
-            <%})%>
+            <select name="genero" id="genero" class="form-control"><br>
+                <option value="">Selecione</option>
+                <%Generos.forEach(function(genero){%>
+                    <option value='<%=genero.id%>'>
+                        <%=genero.nome%>
+                    </option>
+                    <%})%>
             </select>
             <button type="submit">Cadastrar</button>
 

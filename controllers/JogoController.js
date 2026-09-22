@@ -1,5 +1,6 @@
 //importar o Model
 import Jogo from '../models/jogo.js'
+import Genero from '../models/genero.js'
 
 export default class JogoController{
 
@@ -7,7 +8,6 @@ export default class JogoController{
         this.caminhoBase = caminhoBase
     
         this.openAdd = async(req, res)=>{
-            res.render(caminhoBase + "add")
             const resultado = await Genero.find({});
             res.render(caminhoBase + "add", {Generos: resultado})
         }

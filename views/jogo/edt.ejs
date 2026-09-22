@@ -19,8 +19,17 @@
             <input type="text" name="status" value="<%=Jogo.status%>"><br>
             <label>Imagem do Jogo:</label>
             <input type="file" name="imagem" value="<%=Jogo.imagem%>" placeholder="<%=Jogo.imagem%>"><br>
+            <label for="genero" class="form-label">Genero</label>
+            <select name="genero" id="genero" class="form-control"><br>
+                <option value="">Selecione</option>
+                <%Generos.forEach(function(genero){%>
+                    <option value='<%=genero.id%>'>
+                        <%=genero.nome%>
+                    </option>
+                    <%})%>
             <option value="<%=genero.id%>" <%= (genero.id.toString() === Jogo.genero.toString()) ? 'selected' : '' %>
             ><%=genero.nome%></option>
+            </select>
             <button type="submit">Cadastrar</button>
 
         </form>
