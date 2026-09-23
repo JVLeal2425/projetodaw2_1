@@ -69,8 +69,12 @@ export default class JogoController{
 
         this.edt = async(req, res)=>{
 
-        await Jogo.findByIdAndUpdate(req.params.id, req.body)
-        res.redirect('/'+caminhoBase + 'lst');
+         let jgenero = null;
+            if (req.body.genero != null)
+            {
+                jgenero = await Genero.findById(req.body.genero)
+            }
+        
         
         let imagemEnviada
            if(req.file!=null){
@@ -81,6 +85,17 @@ export default class JogoController{
             console.log("nao foi")
             imagemEnviada = null
            }
+
+           await Jogo.findByIdAndUpdate(req.params.id, {
+                nome: req.body.nome,
+                anoLancamento: req.body.anoLancamento,
+                tempoMedio: req.body.tempoMedio,
+                nota: req.body.nota,
+                status: req.body.status,
+                imagem: imagemEnviada,
+                genero: jgenero
+            })
+           res.redirect('/'+caminhoBase + 'lst');
         }
 
          this.del = async(req, res)=>{
