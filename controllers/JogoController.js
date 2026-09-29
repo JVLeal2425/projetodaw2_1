@@ -1,6 +1,7 @@
 //importar o Model
 import Jogo from '../models/jogo.js'
 import Genero from '../models/genero.js'
+import Desenvolvedor from '../models/desenvolvedor.js'
 
 export default class JogoController{
 
@@ -9,7 +10,8 @@ export default class JogoController{
     
         this.openAdd = async(req, res)=>{
             const resultado = await Genero.find({});
-            res.render(caminhoBase + "add", {Generos: resultado})
+            const resultado2 = await Desenvolvedor.find({});
+            res.render(caminhoBase + "add", {Generos: resultado}, {Desenvolvedores: resultado})
         }
         this.add = async(req, res)=>{
             //cria o Jogo
@@ -17,6 +19,11 @@ export default class JogoController{
             if (req.body.genero != null)
             {
                 jgenero = await Genero.findById(req.body.genero)
+            }
+            let jdesenvolvedor = null;
+            if (req.body.desenvolvedor != null)
+            {
+                jdesenvolvedor = await Desenvolvedor.findById(req.body.desenvolvedor)
             }
 
             let imagemEnviada
@@ -36,12 +43,14 @@ export default class JogoController{
                 nota: req.body.nota,
                 status: req.body.status,
                 imagem: imagemEnviada,
-                genero: jgenero
+                genero: jgenero,
+                desenvolvedor: jdesenvolvedor
             });
             res.redirect('/'+caminhoBase + 'add');
         }
         this.list = async(req, res)=>{
             const resultado = await Jogo.find({}).populate('genero')
+            const resultado2 = await Jogo.find({}).populate('desenvolvedor')
             res.render(caminhoBase + 'lst', {Jogo:resultado})
         }
         this.find = async(req, res)=>{
@@ -62,8 +71,9 @@ export default class JogoController{
             console.log(jogo)
             const resultado = await Jogo.findById(req.params.id)
             const jgenero = await Genero.find({});
+            const jdesenvolvedor = await Desenvolvedor.find({});
             res.render(caminhoBase + "edt", 
-                {Jogo: resultado, Genero:jgenero})
+                {Jogo: resultado, Genero:jgenero, Desenvolvedor:jdesenvolvedor})
         }
 
 
@@ -73,6 +83,11 @@ export default class JogoController{
             if (req.body.genero != null)
             {
                 jgenero = await Genero.findById(req.body.genero)
+            }
+        let jdesenvolvedor = null;
+            if (req.body.desenvolvedor != null)
+            {
+                jdesenvolvedor = await Desenvolvedor.findById(req.body.desenvolvedor)
             }
         
         
@@ -93,7 +108,8 @@ export default class JogoController{
                 nota: req.body.nota,
                 status: req.body.status,
                 imagem: imagemEnviada,
-                genero: jgenero
+                genero: jgenero,
+                desenvolvedor: jdesenvolvedor
             })
            res.redirect('/'+caminhoBase + 'lst');
         }

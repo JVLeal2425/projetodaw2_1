@@ -30,6 +30,17 @@
             ><%=genero.nome%></option>
             <%})%>
             </select>
+            <label for="desenvolvedor" class="form-label">Desenvolvedor: </label>
+            <select name="desenvolvedor" id="desenvolvedor" class="form-control"><br>
+                <option value="">Selecione</option>
+                <%Desenvolvedor.forEach(function(desenvolvedor){%>
+                    <option value='<%=desenvolvedor.id%>'>
+                        <%=desenvolvedor.nome%>
+                    </option>
+            <option value="<%=desenvolvedor.id%>" <%= (desenvolvedor.id.toString() === Jogo.desenvolvedor.toString()) ? 'selected' : '' %>
+            ><%=desenvolvedor.nome%></option>
+            <%})%>
+            </select>
             <button type="submit">Cadastrar</button>
 
         </form>

@@ -1,4 +1,5 @@
 import conexao from '../config/conexao.js'
+import desenvolvedor from './desenvolvedor.js';
 
 const Jogo = conexao.Schema({
     nome: {type:String, required:true},
@@ -7,6 +8,7 @@ const Jogo = conexao.Schema({
     nota: {type:Number, required:true},
     status: {type:String, required:true},
     genero: {type: conexao.Types.ObjectId, ref: "Genero", required: false},
+    desenvolvedor: {type: conexao.Types.ObjectId, ref: "Desenvolvedor", required: false},
     imagem: {type:Buffer,
         get: (valor) => {
            if (!valor) return null;

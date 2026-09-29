@@ -1,0 +1,19 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Editar Desenvolvedor</h1>
+    <div>
+        <a href="/desenvolvedr/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+
+            <input type="hidden" name="id" value="<%=Desenvolvedor.id%>"><br>
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<%=Desenvolvedor.nome%>"><br>
+            <label>Categoria:</label>
+            <input type="text" name="categoria" value="<%=Desenvolvedor.categoria%>"><br>
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

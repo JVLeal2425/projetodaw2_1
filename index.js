@@ -3,9 +3,9 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import routes from './routes/route.js'; // rotas externas
 //import jogoRoutes from './routes/JogoRoutes.js'; // rotas externas
-//import desenvolvedorRoutes from './routes/DesenvolvedorRoutes.js'; // rotas externas
 import generoRoutes from './routes/GeneroRoutes.js';
 import jogoRoutes from './routes/JogoRoutes.js';
+import desenvolvedorRoutes from './routes/DesenvolvedorRoutes.js';
 //import usuarioRoutes from './routes/UsuarioRoutes.js';
 //import avaliacaoRoutes from './routes/AvaliacaoRoutes.js';
 
@@ -25,9 +25,8 @@ app.use(express.static(join(__dirname, '/public')));
 app.set('views', join(__dirname, '/views'));
 
 // Rotas
-//app.use(jogoRoutes)
 app.use(jogoRoutes)
-//app.use(desenvolvedorRoutes)
+app.use(desenvolvedorRoutes)
 app.use(generoRoutes)
 //app.use(usuarioRoutes)
 //app.use(avaliacaoRoutes)

@@ -17,10 +17,11 @@
             <td>Status</td>
             <td>Imagem</td>
             <td>Gênero</td>
+            <td>Desenvolvedor</td>
             <td>Ações</td>
         </tr>
 
-        <%for (const {id, nome, anoLancamento, tempoMedio, nota, status, imagem, genero} of Jogo) {%>
+        <%for (const {id, nome, anoLancamento, tempoMedio, nota, status, imagem, genero, desenvolvedor} of Jogo) {%>
             <tr>
                 <td>
                     <%=nome%>
@@ -46,6 +47,9 @@
                 </td>
                 <td>
                 <%=genero != null ? genero.nome : ""%>
+                </td>
+                <td>
+                <%=desenvolvedor != null ? desenvolvedor.nome : ""%>
                 </td>
                 <td><a href="/jogo/edt/<%=id%>">Editar</a>
                     <a href="/jogo/del/<%=id%>">Excluir</a>
