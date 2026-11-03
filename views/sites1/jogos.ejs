@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%-include('cabecalho.ejs')%>
+
+  <main id="main-content" role="main">
+    <h1>Catálogo de Jogos</h1>
+    <p>Consulte a lista completa de jogos cadastrados na plataforma.</p>
+
+    <div class="search-bar" role="search">
+      <input type="text" id="filter-text" placeholder="Filtrar por nome, gênero ou desenvolvedor..."
+        aria-label="Filtrar jogos">
+      <select id="filter-genre" aria-label="Filtrar por gênero">
+        <option value="">Todos os Gêneros</option>
+        <option value="RPG">RPG</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Corrida">Corrida</option>
+        <option value="Estratégia">Estratégia</option>
+      </select>
+      <button type="button" id="btn-filter">Aplicar Filtros</button>
+    </div>
+
+    <div class="game-grid" id="catalog-grid">
+      <article class="game-card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80"
+          alt="Cena futurista em estilo cyberpunk do jogo Cyber Quest">
+        <div class="game-card-content">
+          <h3>Cyber Quest</h3>
+          <p><strong>Gênero:</strong> RPG</p>
+          <p><strong>Desenvolvedor:</strong> Pixel Studio (Indie)</p>
+          <p><strong>Ano de Lançamento:</strong> 2023</p>
+          <p><strong>Tempo Médio:</strong> 45 horas</p>
+          <p><strong>Status:</strong> <span class="badge badge-active">Ativo</span></p>
+          <p class="rating">★ Nota: 8.9 / 10</p>
+          <a href="/jogo/:id" class="card-link" aria-label="Ver mais detalhes sobre Cyber Quest">Ver
+            Detalhes</a>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80"
+          alt="Guerreiros e cenário de fantasia mística no jogo Fantasy Realm">
+        <div class="game-card-content">
+          <h3>Fantasy Realm</h3>
+          <p><strong>Gênero:</strong> Aventura</p>
+          <p><strong>Desenvolvedor:</strong> Dream Games (AAA)</p>
+          <p><strong>Ano de Lançamento:</strong> 2022</p>
+          <p><strong>Tempo Médio:</strong> 60 horas</p>
+          <p><strong>Status:</strong> <span class="badge badge-active">Ativo</span></p>
+          <p class="rating">★ Nota: 9.4 / 10</p>
+          <a href="/jogo/:id" class="card-link" aria-label="Ver mais detalhes sobre Fantasy Realm">Ver
+            Detalhes</a>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80"
+          alt="Nave espacial corrida em órbita de um planeta em Space Racer">
+        <div class="game-card-content">
+          <h3>Space Racer</h3>
+          <p><strong>Gênero:</strong> Corrida</p>
+          <p><strong>Desenvolvedor:</strong> Velocity Works (AAA)</p>
+          <p><strong>Ano de Lançamento:</strong> 2025</p>
+          <p><strong>Tempo Médio:</strong> 12 horas</p>
+          <p><strong>Status:</strong> <span class="badge badge-dev">Em Desenvolvimento</span></p>
+          <p class="rating">★ Nota: 7.5 / 10</p>
+          <a href="/jogo/:id" class="card-link" aria-label="Ver mais detalhes sobre Space Racer">Ver
+            Detalhes</a>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&q=80"
+          alt="Mapa tático de estratégia medieval no jogo Kingdom Tactics">
+        <div class="game-card-content">
+          <h3>Kingdom Tactics</h3>
+          <p><strong>Gênero:</strong> Estratégia</p>
+          <p><strong>Desenvolvedor:</strong> Strategy Forge (Indie)</p>
+          <p><strong>Ano de Lançamento:</strong> 2021</p>
+          <p><strong>Tempo Médio:</strong> 30 horas</p>
+          <p><strong>Status:</strong> <span class="badge badge-inactive">Inativo</span></p>
+          <p class="rating">★ Nota: 6.8 / 10</p>
+          <a href="/jogo/:id" class="card-link" aria-label="Ver mais detalhes sobre Kingdom Tactics">Ver
+            Detalhes</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <%-include('rodape.ejs')%>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>
