@@ -9,4 +9,7 @@ router.post('/formulario', controle.formulario)
 router.get('/site', (req, res) => {
     res.render('sites/index');
 });
+router.get('/jogos', (req, res) => {
+    res.render('sites/jogos');
+});
 export default router
