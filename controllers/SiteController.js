@@ -1,19 +1,19 @@
 import Jogo from '../models/jogo.js'
+export default class SiteController {
+ 
+    constructor() {
+        this.home = async (req, res) => {
+          res.render('site/index')
+        };
 
-class SiteController {
-    home (req, res) {
-        res.render('site/index');
-    }
+        this.login = async (req, res) => {
+          res.render('site/login');
+        };
 
-    login (req, res) {
-        res.render('site/login');
-    }
-
-    jogos (req, res) {
-        res.render('site/jogos');
-    }
-    Jogo = async (req, res) => {
-          const jogos = await Jogo.find({})
+        this.jogos = async (req, res) => {
+          const jogos = await Jogo.find({}).populate('genero')
           res.render('site/jogos', {jogos});
         };
-}
+
+    }
+ }
