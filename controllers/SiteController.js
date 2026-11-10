@@ -1,3 +1,5 @@
+import Jogo from '../models/jogo.js'
+
 class SiteController {
     home (req, res) {
         res.render('site/index');
@@ -10,4 +12,8 @@ class SiteController {
     jogos (req, res) {
         res.render('site/jogos');
     }
+    Jogo = async (req, res) => {
+          const jogos = await Jogo.find({})
+          res.render('site/jogos', {jogos});
+        };
 }
