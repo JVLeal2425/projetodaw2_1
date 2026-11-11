@@ -11,7 +11,7 @@ export default class JogoController{
         this.openAdd = async(req, res)=>{
             const resultado = await Genero.find({});
             const resultado2 = await Desenvolvedor.find({});
-            res.render(caminhoBase + "add", {Generos: resultado}, {Desenvolvedores: resultado})
+            res.render(caminhoBase + "add2", {Generos: resultado}, {Desenvolvedores: resultado})
         }
         this.add = async(req, res)=>{
             //cria o Jogo

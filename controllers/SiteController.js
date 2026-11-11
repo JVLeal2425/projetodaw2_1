@@ -2,7 +2,7 @@ import Jogo from '../models/jogo.js'
 export default class SiteController {
  
     constructor() {
-        this.home = async (req, res) => {
+        this.index = async (req, res) => {
           res.render('site/index')
         };
 
@@ -14,6 +14,7 @@ export default class SiteController {
           const jogos = await Jogo.find({}).populate('genero')
           res.render('site/jogos', {jogos});
         };
+
 
     }
  }

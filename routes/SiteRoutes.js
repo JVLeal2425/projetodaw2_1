@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import GeneroController from '../controllers/SiteController.js'
+import SiteController from '../controllers/SiteController.js'
 const controle = new SiteController();
 
 const caminhobase = '/site'

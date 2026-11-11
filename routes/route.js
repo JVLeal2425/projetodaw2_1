@@ -10,6 +10,6 @@ router.get('/site', (req, res) => {
     res.render('sites/index');
 });
 router.get('/jogos', (req, res) => {
-    res.render('sites/jogos');
+    res.render('site/jogos');
 });
 export default router
