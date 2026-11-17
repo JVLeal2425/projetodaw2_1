@@ -8,7 +8,7 @@ const Jogo = conexao.Schema({
     nota: {type:Number, required:true},
     status: {type:String, required:true},
     genero: {type: conexao.Types.ObjectId, ref: "Genero", required: false},
-    desenvolvedor: {type: conexao.Types.ObjectId, ref: "Desenvolvedor", required: false},
+    desenvolvedor: {type:String, required:true},
     imagem: {type:Buffer,
         get: (valor) => {
            if (!valor) return null;

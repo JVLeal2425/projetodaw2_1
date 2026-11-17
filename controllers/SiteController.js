@@ -3,7 +3,8 @@ export default class SiteController {
  
     constructor() {
         this.index = async (req, res) => {
-          res.render('site/index')
+          const jogos = await Jogo.find({}).populate('genero')
+          res.render('site/index', {jogos})
         };
 
         this.login = async (req, res) => {
@@ -14,6 +15,12 @@ export default class SiteController {
           const jogos = await Jogo.find({}).populate('genero')
           res.render('site/jogos', {jogos});
         };
+
+        this.jogo_det = async (req, res) => {
+          const jogos = await Jogo.find({}).populate('genero')
+          res.render('site/jogos/:id', {jogos});
+        };
+
 
 
     }

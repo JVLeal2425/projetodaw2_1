@@ -19,51 +19,37 @@
     <section aria-labelledby="featured-title">
       <h2 id="featured-title">Jogos em Destaque</h2>
 
-      <div class="game-grid">
-        <article class="game-card">
-          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80"
-            alt="Cena futurista em estilo cyberpunk do jogo Cyber Quest com neon roxo e azul">
+      <div class="game-grid" id="catalog-grid">
+      <article class="game-card">
+        <%for (const {id, imagem, nome, genero, desenvolvedor, anoLancamento, tempoMedio, status, nota} of jogos) {%>
+          <img src="<%=imagem%>" alt="Uma imagem do jogo :3">
           <div class="game-card-content">
-            <h3>Cyber Quest</h3>
-            <p><strong>Gênero:</strong> RPG / Sci-Fi</p>
-            <p><strong>Desenvolvedor:</strong> Pixel Studio</p>
-            <p><strong>Status:</strong> <span class="badge badge-active">Ativo</span></p>
-            <p class="rating">★ Nota: 8.9 / 10</p>
-            <a href="/jogo-detalhes" class="card-link" aria-label="Ver mais detalhes sobre o jogo Cyber Quest">Ver
+            <h3>
+              <%=nome%>
+            </h3>
+            <p><strong>Gênero:</strong>
+              <%=genero !=null ? genero.nome : "" %>
+            </p>
+            <p><strong>Desenvolvedor:</strong>
+              <%=desenvolvedor !=null ? desenvolvedor.nome : "" %>
+            </p>
+            <p><strong>Ano de Lançamento:</strong>
+              <%=anoLancamento%>
+            </p>
+            <p><strong>Tempo Médio:</strong>
+              <%=tempoMedio%>
+            </p>
+            <p><strong>Status:</strong> <span class="badge badge-active">
+                <%=status%>
+              </span></p>
+            <p class="rating">★ Nota: <%=nota%>
+            </p>
+            <a href="/jogos/:id" class="card-link" aria-label="Ver mais detalhes sobre o jogo">Ver
               Detalhes</a>
           </div>
-        </article>
-
-        <article class="game-card">
-          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80"
-            alt="Guerreiros e cenário de fantasia mística do jogo Fantasy Realm">
-          <div class="game-card-content">
-            <h3>Fantasy Realm</h3>
-            <p><strong>Gênero:</strong> Aventura / RPG</p>
-            <p><strong>Desenvolvedor:</strong> Dream Games</p>
-            <p><strong>Status:</strong> <span class="badge badge-active">Ativo</span></p>
-            <p class="rating">★ Nota: 9.4 / 10</p>
-            <a href="/jogo/:id" class="card-link" aria-label="Ver mais detalhes sobre o jogo Fantasy Realm">Ver
-              Detalhes</a>
-          </div>
-        </article>
-
-        <article class="game-card">
-          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80"
-            alt="Nave espacial acelerando em órbita planetária no jogo Space Racer">
-          <div class="game-card-content">
-            <h3>Space Racer</h3>
-            <p><strong>Gênero:</strong> Corrida / Sci-Fi</p>
-            <p><strong>Desenvolvedor:</strong> Velocity Works</p>
-            <p><strong>Status:</strong> <span class="badge badge-dev">Em Desenvolvimento</span></p>
-            <p class="rating">★ Nota: 7.5 / 10</p>
-            <a href="/jogo/:id" class="card-link" aria-label="Ver mais detalhes sobre o jogo Space Racer">Ver
-              Detalhes</a>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+          <%}%>
+      </article>
+    </div>
 
   <%-include('rodape.ejs')%>
 

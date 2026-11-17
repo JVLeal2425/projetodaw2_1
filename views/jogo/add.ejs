@@ -26,15 +26,8 @@
                     </option>
                     <%})%>
             </select>
-            <label for="desenvolvedor" class="form-label">Desenvolvedor</label>
-            <select name="desenvolvedor" id="desenvolvedor" class="form-control"><br>
-                <option value="">Selecione</option>
-                <%Desenvolvedores.forEach(function(desenvolvedor){%>
-                    <option value='<%=desenvolvedor.id%>'>
-                        <%=desenvolvedor.nome%>
-                    </option>
-                    <%})%>
-            </select>
+            <label>Desenvolvedor do Jogo:</label>
+            <input type="text" name="desenvolvedor"><br>
             <button type="submit">Cadastrar</button>
 
         </form>
