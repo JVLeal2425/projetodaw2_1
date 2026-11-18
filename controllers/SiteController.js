@@ -17,8 +17,10 @@ export default class SiteController {
         };
 
         this.jogo_det = async (req, res) => {
-          const jogos = await Jogo.find({}).populate('genero')
-          res.render('site/jogos/:id', {jogos});
+          //buscar jogo que tem id que foi passado e devolver somente 1 jogo
+          const id = req.params.id
+          const jogo = await Jogo.findById(id) 
+          res.render('site/jogo-detalhes', {jogo});
         };
 
 

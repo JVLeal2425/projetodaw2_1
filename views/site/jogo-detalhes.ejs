@@ -5,17 +5,17 @@
   <main id="main-content" role="main">
     <article class="game-detail-container">
       <div class="game-detail-header">
-        <img src="<%=imagem%>" alt="Uma imagem do jogo :3"
+        <img src="<%=jogo.imagem%>" alt="Uma imagem do jogo :3"
           class="game-detail-img">
 
         <div class="game-detail-info">
-          <h1><%=nome%></h1>
-          <p><strong>Gênero:</strong> <%=genero !=null ? genero.nome : "" %></p>
-          <p><strong>Desenvolvedor:</strong> <%=desenvolvedor !=null ? desenvolvedor.nome : "" %></p>
-          <p><strong>Ano de Lançamento:</strong> <%=anoLancamento%></p>
-          <p><strong>Tempo Médio de Jogatina:</strong> <%=tempoMedio%></p>
-          <p><strong>Status:</strong> <span class="badge badge-active"><%=status%></span></p>
-          <p class="rating">★ Média das Avaliações: <%=nota%></p>
+          <h1><%=jogo.nome%></h1>
+          <p><strong>Gênero:</strong> <%=jogo.genero !=null ? genero.nome : "" %></p>
+          <p><strong>Desenvolvedor:</strong> <%=jogo.desenvolvedor !=null ? desenvolvedor.nome : "" %></p>
+          <p><strong>Ano de Lançamento:</strong> <%=jogo.anoLancamento%></p>
+          <p><strong>Tempo Médio de Jogatina:</strong> <%=jogo.tempoMedio%></p>
+          <p><strong>Status:</strong> <span class="badge badge-active"><%=jogo.status%></span></p>
+          <p class="rating">★ Média das Avaliações: <%=jogo.nota%></p>
 
           <button id="btn-favorite" type="button" class="btn-fav" aria-label="Favoritar o jogo">
             ❤️ Favoritar Jogo

@@ -11,7 +11,7 @@
         aria-label="Filtrar jogos">
       <select id="filter-genre" aria-label="Filtrar por gênero">
         <option value="">Todos os Gêneros</option>
-        <option value="RPG">RPG</option>
+        <option value="<%=genero !=null ? genero.nome : "" %>"</option>">RPG</option>
         <option value="Aventura">Aventura</option>
         <option value="Corrida">Corrida</option>
         <option value="Estratégia">Estratégia</option>
