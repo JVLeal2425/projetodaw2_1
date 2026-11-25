@@ -1,0 +1,32 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Usuários</h1>
+    <div class="search">
+        <form action="
+        " method="post">
+            <input type="text" name="filtro" id="" placeholder="digite o nome">
+            <button type="submit" class="btn">Pesquisar</button>
+        </form>
+    </div>
+    <a href="/login/cadastro">+ Usuário</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>email</td>
+            <td>Ações</td>
+        </tr>
+
+        <%for (const {id, nome, email} of Login) {%>
+            <tr>
+                <td>
+                    <%=nome%>
+                </td>
+                <td>
+                    <%=email%>
+                </td>
+                <td>
+                    <a href="/login/del/<%=id%>">Excluir</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <%-include('../rodape.ejs')%>

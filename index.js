@@ -7,6 +7,7 @@ import generoRoutes from './routes/GeneroRoutes.js';
 import jogoRoutes from './routes/JogoRoutes.js';
 import desenvolvedorRoutes from './routes/DesenvolvedorRoutes.js';
 import siteRoutes from './routes/SiteRoutes.js';
+import loginRoutes from './routes/LoginRoutes.js';
 //import usuarioRoutes from './routes/UsuarioRoutes.js';
 //import avaliacaoRoutes from './routes/AvaliacaoRoutes.js';
 
@@ -30,6 +31,7 @@ app.use(jogoRoutes)
 app.use(desenvolvedorRoutes)
 app.use(generoRoutes)
 app.use(siteRoutes)
+app.use(loginRoutes)
 //app.use(usuarioRoutes)
 //app.use(avaliacaoRoutes)
 app.use(routes)
